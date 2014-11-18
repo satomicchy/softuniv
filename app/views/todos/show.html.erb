@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>番号:</strong>
+  <%= @todo.contents %>
+</p>
+
+<p>
+  <strong>内容:</strong>
+  <%= @todo.contents %>
+</p>
+
+<p>
+  <strong>記入者:</strong>
+  <%= @todo.writer %>
+</p>
+
+<p>
+  <strong>記入日:</strong>
+  <%= @todo.created_at.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>担当者:</strong>
+  <%= @todo.worker %>
+</p>
+
+<p>
+  <strong>期限:</strong>
+  <%= @todo.deadline.try(:strftime, "%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>確認者:</strong>
+  <%= @todo.check %>
+</p>
+
+<p>
+  <strong>メモ:</strong>
+  <%= @todo.memo %>
+</p>
+
+<%= link_to '編集', edit_todo_path(@todo) %> |
+<%= link_to '一覧に戻る', todos_path %>

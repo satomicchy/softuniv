@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  contents: MyText
+  writer: MyString
+  worker: MyString
+  deadline: 2014-11-19
+  check: MyString
+  memo: MyText
+
+two:
+  contents: MyText
+  writer: MyString
+  worker: MyString
+  deadline: 2014-11-19
+  check: MyString
+  memo: MyText

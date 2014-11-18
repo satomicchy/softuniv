@@ -1,0 +1,38 @@
+<h1>Listing todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>番号</th>
+      <th>内容</th>
+      <th>記入者</th>
+      <th>記入日</th>
+      <th>担当者</th>
+      <th>期限</th>
+      <th>確認者</th>
+      <th>メモ</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td><%= todo.id %></td>
+        <td><%= todo.contents %></td>
+        <td><%= todo.writer %></td>
+        <td><%= todo.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= todo.worker %></td>
+        <td><%= todo.deadline.try(:strftime, "%Y-%m-%d") %></td>
+        <td><%= todo.check %></td>
+        <td><%= todo.memo %></td>
+        <td><%= link_to '詳細', todo %></td>
+        <td><%= link_to '編集', edit_todo_path(todo) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %>
